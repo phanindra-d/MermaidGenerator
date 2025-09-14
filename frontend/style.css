@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f8fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 90px;
+}
+
+.container {
+    position: relative;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    width: 100%;
+    min-height: 95vh;
+    padding-top: 80px; 
+    padding-bottom: 3.5rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 1000px;
+    background: url('./assets/background.png') no-repeat  center center;
+    opacity: 0.23;
+    z-index: -1;
+}
+
+.logo_part {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo_part img {
+    height: 40px;
+    width: auto;
+}
+
+.logo_part h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+
+.anchor {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+nav a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo_part {
+        margin-bottom: 1rem;
+    }
+
+    .anchor {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .anchor a {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Container content styling */
+.container h1 {
+    margin: 2rem 0;
+    color: #333;
+    text-align: center;
+}
+
+.container p {
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+footer {
+    background: #fff;
+    color: #4a5a6a;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 1rem;
+    box-shadow: 0 -1px 4px rgba(0,0,0,0.04);
+    width: 100%;
+    margin-top: auto;
+    padding: 1.25rem 0;
+    margin-bottom: 0px;
+    height: 95px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: #475569; /* slate-ish */
+    font-size: 0.95rem;
+    padding-top: 20px;
+}
+
+.footer-left {
+    color: #6b7280;
+}
+
+.footer-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.18s ease, opacity 0.18s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0 6px;
+    opacity: 0.95;
+}
+
+.footer-links a + a::before {
+    content: "|";
+    color: #cbd5e1;
+    margin: 0 8px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: #0b5fff;
+    text-decoration: none;
+    opacity: 1;
+}
+
+/* ensure page content doesn't sit flush with footer on short pages */
+.container {
+    /* ...existing code... */
+    padding-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    .footer-links {
+        gap: 0.75rem;
+        justify-content: center;
+    }
+}
+.main-content{
+    padding-top: 45px;
+    display: flex;
+    flex-direction: row;
+}
+.main-content1 {
+    background: #f7f8fa;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    border: 1.5px solid #e5e7eb;
+    padding: 2.5rem 2rem 2rem 2rem;
+    margin: 2rem 0 2rem 2rem;
+    max-width: 750px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-content1 h1 {
+    font-family: "IBM Plex Sans Condensed", Arial, sans-serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.main-content1 p {
+    color: #6b7280;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.main-content1 h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.main-content1 textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1.08rem;
+    font-family: "IBM Plex Sans Condensed", monospace, Arial;
+    background: #fff;
+    color: #222;
+    margin-bottom: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.main-content1 textarea:focus {
+    border-color: #0bacef;
+    box-shadow: 0 0 0 2px #e0f7ff;
+}
+
+.main-content1 button {
+    background: #0bacef;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.08rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(11,172,239,0.08);
+    transition: background 0.2s;
+}
+
+.main-content1 button:hover {
+    background: #098ec0;
+}
+
+.main-content2 {
+    background: #f7f8fa;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    border: 1.5px solid #e5e7eb;
+    padding: 2.5rem 2rem 2rem 2rem;
+    margin: 2rem 0 2rem 2rem;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 730px;
+    min-width: 320px;
+    width: 730px;
+    height: 870px;
+    box-sizing: border-box;
+}
+
+.main-content2 h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #222;
+    font-family: "IBM Plex Sans Condensed", Arial, sans-serif;
+}
+
+.preview {
+  width: 100%;
+  background-color: #eaeaea;
+  min-height: 500px;
+  border: 1px dashed #ddd;
+  padding: 10px;
+  overflow: auto;
+  position: relative;
+}
+
+.preview svg {
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  overflow: visible !important;
+  display: block;
+}
+
+.preview foreignObject { overflow: visible !important; }
+
+
+
+.main-content1,
+.main-content2 {
+    max-width: 730px;
+    min-width: 320px;
+    width: 730px;
+    height: 870px;
+    box-sizing: border-box;
+}
+
+.ask-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 1rem;
+    
+}
+
+.ask-box input[type="text"] {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    min-width: 0;
+    transition: border 0.2s;
+    height: 40px;
+}
+
+.ask-box input[type="text"]:focus {
+    border-color: #0bacef;
+    box-shadow: 0 0 0 2px #e0f7ff;
+}
+
+.ask-box button {
+    background: #0bacef;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    height: 42px;
+    margin-top: 9px;
+}
+
+.ask-box button:hover {
+    background: #098ec0;
+}
+
+@media (max-width: 600px) {
+    .ask-box {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch;
+    }
+    .ask-box button {
+        width: 100%;
+        justify-content: center;
+        height: 42px;
+    }
+}
+.diagram-type{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+    gap: 10px;
+}
+#diagramType{
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+/* HTML: <div class="loader"></div> */
+
+.loader {
+  display: none;
+  margin-top: 20px;
+  width: 280px;
+  height: 30px;
+  box-shadow: 0 3px 0 #fff;
+  --g:repeat-x repeating-linear-gradient(90deg,#ccc 0 16px,#0000 0 18px,#ccc 0 34px,#0000 0 100%);
+  background: var(--g),var(--g);
+  background-size: 60px 14px,60px 14px;
+  animation: l8 1s infinite linear;
+}
+@keyframes l8 {
+  0%   {background-position:0    0,0    100%}
+  100% {background-position:60px 0,60px 100%}
+}

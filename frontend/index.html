@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mermaid Diagram UI</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script> -->
+  <link href="./style.css" rel="stylesheet">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script> -->
+  <link href="./assets/background.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo_part">
+                <img src="./assets/logo.png" alt="Logo">
+                <h2>MermaidGenerator</h2>
+            </div>
+            <div class="anchor">
+                <a href="#" class="active">Home</a>
+                <a href="#">Documentation</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Login</a>
+            </div>
+           
+        </nav>
+          <div class="main-content">
+          <div class="main-content1">
+             <h1>Create Stunning Diagrams</h1>
+             <p>
+                Simply write Mermaid syntax and watch your diagrams come to life instantly.
+             </p>
+             <h3>Mermaid Syntax</h3>
+             <textarea id="code" rows="7" style="width:100%;max-width:600px;border:1px solid #cbd5e1;border-radius:8px;padding:1rem;margin-bottom:1rem;">
+                    graph TD
+                    A[Start] --> B{Is it?}
+                    B -- Yes --> C[OK]
+                    C --> D[Rethink]
+                    D --> A;
+                    B -- No --> E[End]
+             </textarea>
+          
+              <div class="diagram-type">
+                <label><strong>Diagram Type:</strong></label>
+                <select id="diagramType">
+                    <option value="flowchart TD">📊 Flowchart (Top to Bottom)</option>
+                    <option value="flowchart LR">📊 Flowchart (Left to Right)</option>
+                    <option value="erDiagram">🗄️ Database Schema (ER Diagram)</option>
+                    <option value="graph TD">🏗️ System Architecture</option>
+                    <option value="sequenceDiagram">🔄 Sequence Diagram</option>
+                    <option value="classDiagram">📐 Class Diagram</option>
+                </select>
+            </div>
+            <!-- <div class="loading" id="loading">🔄 Generating diagram... Please wait</div> -->
+        
+             <button id = "renderBtn" style="background:#0bacef;color:#fff;padding:0.75rem 2rem;border:none;border-radius:8px;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:2rem;">
+                <span style="font-size:1.2em;">🛠️</span> Generate Diagram
+             </button>
+    
+              <div class="ask-box">
+                  <input type="text" id="userInput" placeholder="Ask a question..." />
+                  <button id="sendBtn">
+                    <span style="font-size:1.2em;">➤</span>
+                  </button>
+              </div>
+
+             </div>
+          </div>
+          <div class="main-content2">
+            <h2>Diagram Preview</h2>
+            <div class="preview">
+                <!-- Mermaid diagram will be rendered here -->
+            </div>
+            <div class="loader"></div>
+          </div>
+        </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <span>&copy; 2025 MermaidGenerator. All rights reserved.</span>
+        <span class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </span>
+      </div>
+    </footer>
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"></script> -->
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
+
+  <!-- <h2>Mermaid Diagram Generator</h2>
+  <p>Enter Mermaid code below:</p>
+  
+
+   <button onclick="renderDiagram()">Render Diagram</button>
+
+  <div id="preview"></div> -->
+
+  <!-- <script>
+    async function renderDiagram() {
+      const code = document.getElementById("code").value;
+      try {
+        const { svg } = await mermaid.render("theGraph", code);
+        document.getElementById("preview").innerHTML = svg;
+      } catch (error) {
+        document.getElementById("preview").innerHTML = "<b>Error:</b> " + error.message;
+      }
+    }
+
+    // Render default diagram on page load
+    renderDiagram();
+  </script> -->
