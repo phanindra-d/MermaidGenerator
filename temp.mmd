@@ -1,0 +1,11 @@
+graph TD
+    A[Start] --> B{User Navigates to Signup Page};
+    B --> C{Displays Signup Form};
+    C --> D{User Enters Information};
+    D -- Validated? --> E{Displays Validation Errors};
+    E --> C;
+    D -- Valid --> F{Attempts to Create Account};
+    F -- Account Created? --> G{Redirects to Dashboard};
+    F -- Error? --> H{Displays Error Message};
+    H --> C;
+    G --> I[End];

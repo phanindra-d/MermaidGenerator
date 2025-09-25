@@ -80,6 +80,18 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
         mermaidCode = mermaidCode.replace(/\\n/g, '\n');
         console.log(mermaidCode)
         hideLoader();
+          if (
+            typeof mermaidCode !== 'string' ||
+            mermaidCode.startsWith('Error') ||
+            mermaidCode.includes('model is overloaded') ||
+            mermaidCode.includes('"error":')
+          ) {
+            displayError('Backend Error: Could not generate diagram.<br><span style="font-size:0.95em;">'+mermaidCode+'</span>');
+            alert("Backend responded with an error! Check console/Swagger.");
+            return;
+          }
+          document.getElementById("code").value = mermaidCode;
+          
         if (await validateMermaid(mermaidCode)) {
           console.log('mermaid eeyyy')
           console.log(`Diagram Type:${mermaidCode}`)
@@ -109,16 +121,25 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
     }
 });
 
+
+function displayError(message) {
+  document.querySelector('.preview').innerHTML = `
+    <div style="color: #d32f2f; font-weight: bold;">
+      <span style="font-size:1.4em;">&#9888;</span>
+      ${message}
+    </div>
+  `;
+}
+
 async function validateMermaid(mermaidCode) {
   try {
     await mermaid.parse(mermaidCode);
     console.log('Mermaid syntax is valid.');
-    return true
+    return true;
   } catch (err) {
     console.error('Mermaid Syntax Error:', err.message);
     displayError('Mermaid Syntax Error: ' + err.message + 
-      '\nPlease check diagram type, node/edge syntax, and fix the highlighted issue.');
-      return false
+      '<br>Please check diagram type and syntax.');
+    return false;
   }
 }
-
